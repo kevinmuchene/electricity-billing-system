@@ -24,7 +24,6 @@
 2. state
 3. county
 4. town
-5. building number
 
 # Meter Reading
 1. id
