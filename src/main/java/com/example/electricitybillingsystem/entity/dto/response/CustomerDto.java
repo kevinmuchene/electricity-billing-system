@@ -12,5 +12,5 @@ public class CustomerDto {
     private String firstName;
     private String lastName;
     private Integer licence;
-    private Address address;
+//    private Address address;
 }
