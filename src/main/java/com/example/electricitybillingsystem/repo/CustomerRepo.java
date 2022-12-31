@@ -1,6 +1,5 @@
 package com.example.electricitybillingsystem.repo;
 
-import com.example.electricitybillingsystem.entity.Address;
 import com.example.electricitybillingsystem.entity.Customer;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -12,12 +11,16 @@ public interface CustomerRepo extends CrudRepository<Customer, Long> {
 
     List<Customer> findAll();
 
-    Customer findCustomerById(Long id);
+    Customer findCustomerById(Long customerId);
+
+    Customer findCustomerByFirstName(String name);
+
+    Customer findCustomerByLastName(String name);
 
 
-    Customer findCustomerByLicence(int licence);
+    Customer findCustomerByLicence(int customerLicence);
 
 //    List<Customer> findCustomerByProperty(int property);
 
-     List<Customer> findCustomerByAddress_Id(Long id);
+     List<Customer> findCustomerByAddress_Id(Long addressId);
 }
