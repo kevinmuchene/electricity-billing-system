@@ -18,7 +18,6 @@ public interface PropertyRepo extends CrudRepository<Property, Long> {
      List<Property> findPropertyByAddressId(Long id);
 
 
-
 //   a
 
 }
