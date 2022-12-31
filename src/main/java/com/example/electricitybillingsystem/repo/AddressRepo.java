@@ -13,5 +13,5 @@ public interface AddressRepo extends CrudRepository<Address, Long> {
 
       Address findAddressById(Long id);
 
-      void deleteAddressById(Long addressId);
+      void deleteById(Long addressId);
 }

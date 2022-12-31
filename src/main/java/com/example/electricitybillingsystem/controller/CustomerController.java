@@ -27,6 +27,13 @@ public class CustomerController {
         return customerService.getCustomerById(id);
     }
 
+    @GetMapping("/customerlicenceid/{id}")
+    public CustomerDto getCustomerByLicenceId(@PathVariable("id") int id){
+
+        return customerService.getCustomerByLicence(id);
+
+    }
+
     @PostMapping()
     public void saveCustomer(@RequestBody CustomerDto customerDto) {
         customerService.save(customerDto);

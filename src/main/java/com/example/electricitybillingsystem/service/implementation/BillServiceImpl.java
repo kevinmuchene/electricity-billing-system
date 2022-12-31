@@ -86,6 +86,6 @@ public class BillServiceImpl implements BillService {
 
     @Override
     public void delete(Long billId) {
-        billRepo.deleteBillById(billId);
+        billRepo.deleteById(billId);
     }
 }

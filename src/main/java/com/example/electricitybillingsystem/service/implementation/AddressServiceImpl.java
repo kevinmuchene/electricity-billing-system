@@ -68,6 +68,6 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public void deleteAddress(Long addressId) {
-        addressRepo.deleteAddressById(addressId);
+        addressRepo.deleteById(addressId);
     }
 }

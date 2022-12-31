@@ -19,5 +19,5 @@ public interface BillRepo extends CrudRepository<Bill, Long> {
 
      List<Bill> findBillByProperty_Id(Long id);
 
-     void deleteBillById(Long bilId);
+     void deleteById(Long bilId);
 }

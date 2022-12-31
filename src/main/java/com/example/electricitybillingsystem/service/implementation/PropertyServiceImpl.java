@@ -83,6 +83,6 @@ public class PropertyServiceImpl implements PropertyService {
 
     @Override
     public void delete(Long propertyId) {
-        propertyRepo.deletePropertyById(propertyId);
+        propertyRepo.deleteById(propertyId);
     }
 }

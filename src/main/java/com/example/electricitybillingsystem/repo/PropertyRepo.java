@@ -17,6 +17,6 @@ public interface PropertyRepo extends CrudRepository<Property, Long> {
 
      List<Property> findPropertyByAddressId(Long id);
 
-     void deletePropertyById(Long propertyId);
+     void deleteById(Long propertyId);
 
 }

@@ -69,6 +69,6 @@ public class MeterReadingServiceImpl implements MeterReadingService {
 
     @Override
     public void delete(Long meterReadingId) {
-        meterReadingRepo.deleteMeterReadingById(meterReadingId);
+        meterReadingRepo.deleteById(meterReadingId);
     }
 }
