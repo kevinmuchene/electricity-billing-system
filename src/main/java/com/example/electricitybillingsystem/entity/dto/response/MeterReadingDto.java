@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Data
 @NoArgsConstructor
-public class MeterReading {
+public class MeterReadingDto {
 
     private Long id;
     private int meterReading;
