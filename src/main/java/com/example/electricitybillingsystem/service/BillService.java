@@ -14,4 +14,10 @@ public interface BillService {
     List<BillDto> findBillByDate(Date date);
 
     List<BillDto> findBillByProperty_Id(Long id);
+
+    void save(BillDto billDto);
+
+    BillDto update(Long billId, BillDto billDto);
+
+    void delete(Long billId);
 }
