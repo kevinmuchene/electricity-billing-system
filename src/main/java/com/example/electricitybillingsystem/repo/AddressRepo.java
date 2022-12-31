@@ -8,8 +8,10 @@ import java.util.List;
 
 @Repository
 public interface AddressRepo extends CrudRepository<Address, Long> {
-//
+
       List<Address> findAll();
 
       Address findAddressById(Long id);
+
+      void deleteAddressById(Long addressId);
 }
