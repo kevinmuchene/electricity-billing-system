@@ -22,8 +22,8 @@ public class Customer {
     private Integer licence;
 
     @OneToMany(mappedBy = "customer")
-    public List<Property> properties;
+    private List<Property> properties;
 
     @ManyToOne()
-    public Address address;
+    private Address address;
 }
