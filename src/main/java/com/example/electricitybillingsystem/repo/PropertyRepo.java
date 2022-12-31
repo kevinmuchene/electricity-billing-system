@@ -1,21 +1,25 @@
 package com.example.electricitybillingsystem.repo;
 
 import com.example.electricitybillingsystem.entity.Property;
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface PropertyRepo extends CrudRepository<Property, Long> {
 
-    public List<Property> findByAll();
+     List<Property> findAll();
 
-    public Property findById(Integer id);
+     Property findPropertyById(Long id);
 
-    public List<Property> findByCustomerDrivingLicence(Integer drivingLicence);
+     Property findPropertyByCustomerId(Long id);
 
-    public List<Property> findByCustomerId(Integer id);
+     List<Property> findPropertyByAddressId(Long id);
 
-    public List<Property> findByState(String state);
 
+
+//   a
 
 }

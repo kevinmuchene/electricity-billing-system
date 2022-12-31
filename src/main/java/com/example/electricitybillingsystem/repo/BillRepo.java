@@ -2,15 +2,20 @@ package com.example.electricitybillingsystem.repo;
 
 import com.example.electricitybillingsystem.entity.Bill;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.time.Month;
+import java.util.Date;
 import java.util.List;
 
+@Repository
 public interface BillRepo extends CrudRepository<Bill, Long> {
 
-    public List<Bill> findAll();
+     List<Bill> findAll();
 
-    public List<Bill> findByCustomerId(Long id);
+     Bill findBillById(Long id);
 
-    public List<Bill> findByMonth(Month month);
+     List<Bill> findBillByDate(Date date);
+
+     List<Bill> findBillByProperty_Id(Long id);
 }
