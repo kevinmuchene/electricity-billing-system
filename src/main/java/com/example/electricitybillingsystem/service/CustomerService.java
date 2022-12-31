@@ -16,7 +16,13 @@ public interface CustomerService {
 
     CustomerDto getCustomerByLicence(int licenceId);
 
-    CustomerDto getCustomerByProperty(int propertyId);
+    CustomerDto getCustomerByProperty(Long propertyId);
 
     List<CustomerDto> getCustomerByAddress_Id(Long id);
+
+    void save(CustomerDto customerDto);
+
+    CustomerDto update(Long customerId, CustomerDto customerDto);
+
+    void delete(Long customerId);
 }
