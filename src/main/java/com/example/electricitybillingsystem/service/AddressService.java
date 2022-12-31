@@ -9,4 +9,10 @@ public interface AddressService {
     List<AddressDto> getAllAddresses();
 
     AddressDto getAddressById(Long id);
+
+    void save(AddressDto addressDto);
+
+    AddressDto update(Long addressId, AddressDto addressDto);
+
+    void deleteAddress(Long addressId);
 }
