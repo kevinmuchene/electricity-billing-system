@@ -8,11 +8,13 @@ import com.example.electricitybillingsystem.repo.PropertyRepo;
 import com.example.electricitybillingsystem.service.PropertyService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class PropertyServiceImpl implements PropertyService {
 
     @Autowired
@@ -58,7 +60,7 @@ public class PropertyServiceImpl implements PropertyService {
 
     @Override
     public void save(PropertyDto propertyDto) {
-        propertyRepo.save(modelMapper.map(propertyRepo, Property.class));
+        propertyRepo.save(modelMapper.map(propertyDto, Property.class));
     }
 
     @Override
