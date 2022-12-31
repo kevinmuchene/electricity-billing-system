@@ -109,9 +109,9 @@ public class CustomerServiceImpl implements CustomerService {
             customer.setLicence(customerDto.getLicence());
         }
 
-        if(customerDto.getAddress() != null) {
-            customer.setAddress(customerDto.getAddress());
-        }
+//        if(customerDto.getAddress() != null) {
+//            customer.setAddress(customerDto.getAddress());
+//        }
 
         customerRepo.save(customer);
 
@@ -121,6 +121,6 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void delete(Long customerId) {
-        customerRepo.deleteCustomerById(customerId);
+        customerRepo.deleteById(customerId);
     }
 }
