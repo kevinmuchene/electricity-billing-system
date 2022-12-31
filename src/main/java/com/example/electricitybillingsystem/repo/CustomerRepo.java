@@ -23,4 +23,6 @@ public interface CustomerRepo extends CrudRepository<Customer, Long> {
 //    List<Customer> findCustomerByProperty(int property);
 
      List<Customer> findCustomerByAddress_Id(Long addressId);
+
+     void deleteCustomerById(long customerId);
 }
