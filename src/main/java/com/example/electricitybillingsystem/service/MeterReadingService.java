@@ -8,5 +8,11 @@ public interface MeterReadingService {
 
     List<MeterReadingDto> findAll();
 
-    List<MeterReadingDto> findMeterReadingByPropertyId(Long id) ;
+    List<MeterReadingDto> findMeterReadingByPropertyId(Long id);
+
+    void save(MeterReadingDto meterReadingDto);
+
+    MeterReadingDto update(Long meterReadingId, MeterReadingDto meterReadingDto);
+
+    void delete(Long meterReadingId);
 }
