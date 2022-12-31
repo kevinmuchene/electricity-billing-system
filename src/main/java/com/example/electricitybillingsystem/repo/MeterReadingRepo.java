@@ -11,5 +11,9 @@ public interface MeterReadingRepo extends CrudRepository<MeterReading, Long> {
 
      List<MeterReading> findAll();
 
-     List<MeterReading> findMeterReadingByPropertyId(Long id) ;
+     MeterReading findMeterReadingById(Long meterReadingId);
+
+     List<MeterReading> findMeterReadingByPropertyId(Long id);
+
+     void deleteMeterReadingById(long meterReadingId);
 }
