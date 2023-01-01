@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 public class PropertyDto {
 
     private Long id;
+    private Long customerId;
     private String type;
-    private Address address;
+//    private Address address;
 
 }

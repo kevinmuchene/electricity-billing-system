@@ -1,5 +1,6 @@
 package com.example.electricitybillingsystem.service;
 
+import com.example.electricitybillingsystem.entity.dto.request.PropertyReqDto;
 import com.example.electricitybillingsystem.entity.dto.response.PropertyDto;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public interface PropertyService {
 
     List<PropertyDto> getPropertyByAddressId(Long id);
 
-    void save(PropertyDto propertyDto);
+    void save(PropertyReqDto PropertyReqDto);
 
     PropertyDto update(Long propertyId, PropertyDto propertyDto);
 

@@ -75,9 +75,7 @@ public class BillServiceImpl implements BillService {
             bill.setReading(billDto.getReading());
         }
 
-        if(billDto.getDate() != null) {
-            bill.setDate(billDto.getDate());
-        }
+
 
         billRepo.save(bill);
 

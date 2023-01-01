@@ -11,5 +11,5 @@ public class BillDto {
 
     private Long id;
     private int reading;
-    private Date date;
+//    private Date date;
 }

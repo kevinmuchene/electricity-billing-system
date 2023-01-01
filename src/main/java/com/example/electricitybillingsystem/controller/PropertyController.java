@@ -1,5 +1,6 @@
 package com.example.electricitybillingsystem.controller;
 
+import com.example.electricitybillingsystem.entity.dto.request.PropertyReqDto;
 import com.example.electricitybillingsystem.entity.dto.response.CustomerDto;
 import com.example.electricitybillingsystem.entity.dto.response.PropertyDto;
 import com.example.electricitybillingsystem.service.implementation.PropertyServiceImpl;
@@ -16,7 +17,7 @@ public class PropertyController {
     private PropertyServiceImpl propertyService;
 
     @GetMapping()
-    public List<PropertyDto> getCustomers() {
+    public List<PropertyDto> getProperties() {
         return propertyService.getAllProperties();
     }
 
@@ -26,8 +27,8 @@ public class PropertyController {
     }
 
     @PostMapping()
-    public void saveProperty(@RequestBody PropertyDto propertyDto) {
-        propertyService.save(propertyDto);
+    public void saveProperty(@RequestBody PropertyReqDto propertyReqDto) {
+        propertyService.save(propertyReqDto);
     }
 
     @PutMapping("/{id}")

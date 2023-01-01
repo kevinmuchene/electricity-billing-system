@@ -3,6 +3,7 @@ package com.example.electricitybillingsystem.service.implementation;
 import com.example.electricitybillingsystem.entity.Customer;
 
 import com.example.electricitybillingsystem.entity.Property;
+import com.example.electricitybillingsystem.entity.dto.request.PropertyReqDto;
 import com.example.electricitybillingsystem.entity.dto.response.PropertyDto;
 import com.example.electricitybillingsystem.repo.PropertyRepo;
 import com.example.electricitybillingsystem.service.PropertyService;
@@ -59,8 +60,8 @@ public class PropertyServiceImpl implements PropertyService {
     }
 
     @Override
-    public void save(PropertyDto propertyDto) {
-        propertyRepo.save(modelMapper.map(propertyDto, Property.class));
+    public void save(PropertyReqDto PropertyReqDto) {
+        propertyRepo.save(modelMapper.map(PropertyReqDto, Property.class));
     }
 
     @Override
@@ -72,9 +73,9 @@ public class PropertyServiceImpl implements PropertyService {
             property.setType(propertyDto.getType());
         }
 
-        if(propertyDto.getAddress() != null){
-            property.setAddress(propertyDto.getAddress());
-        }
+//        if(propertyDto.getAddress() != null){
+//            property.setAddress(propertyDto.getAddress());
+//        }
 
         propertyRepo.save(property);
 

@@ -1,5 +1,6 @@
 package com.example.electricitybillingsystem.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,18 +20,20 @@ public class Property {
 //    private Long customer_id;
     private String type;
 
-    @ManyToOne
-    @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "id")
     private Customer customer;
 
-    @ManyToOne
+//    @ManyToOne(optional = false)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "ADDRESS_ID", referencedColumnName = "id")
+    @JsonIgnore
     private Address address;
 
-    @OneToMany(mappedBy = "property")
+    @OneToMany(mappedBy = "property", fetch = FetchType.LAZY)
     private List<Bill> bills;
 
-    @OneToMany(mappedBy = "property")
+    @OneToMany(mappedBy = "property", fetch = FetchType.LAZY)
     private List<MeterReading> meterReadings;
 
 
