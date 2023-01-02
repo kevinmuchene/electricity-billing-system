@@ -4,7 +4,7 @@
 
 1. Spring Boot
 2. AWS S3
-3. PostgreSQL (AWS)
+3. MySQL
 
 # Main Controllers
 1. Admin
