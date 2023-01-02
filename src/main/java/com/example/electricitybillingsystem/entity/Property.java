@@ -1,6 +1,8 @@
 package com.example.electricitybillingsystem.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,14 +29,21 @@ public class Property {
 //    @ManyToOne(optional = false)
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "ADDRESS_ID", referencedColumnName = "id")
-    @JsonIgnore
     private Address address;
 
-    @OneToMany(mappedBy = "property", fetch = FetchType.LAZY)
-    private List<Bill> bills;
+//    @OneToMany(mappedBy = "property", fetch = FetchType.LAZY)
+//    private List<Bill> bills;
 
     @OneToMany(mappedBy = "property", fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<MeterReading> meterReadings;
+
+    @OneToMany(mappedBy = "property")
+    private List<PaidBills> paidBills;
+
+    @OneToMany(mappedBy = "property", fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<UnPaidBills> unPaidBills;
 
 
 //    private Address address_id;

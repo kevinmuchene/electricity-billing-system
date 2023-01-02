@@ -1,5 +1,6 @@
 package com.example.electricitybillingsystem.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,6 +22,7 @@ public class Address {
     private String town;
 
     @OneToMany(mappedBy = "address")
+
     public List<Property> properties;
 
     @OneToMany(mappedBy = "address")

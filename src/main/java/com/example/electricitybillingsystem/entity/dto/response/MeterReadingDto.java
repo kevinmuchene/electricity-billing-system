@@ -10,6 +10,7 @@ import java.util.Date;
 public class MeterReadingDto {
 
     private Long id;
+    private Long propertyId;
     private int meterReading;
-    private Date date;
+
 }

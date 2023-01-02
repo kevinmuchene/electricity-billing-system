@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("api/v1/properties")
 public class PropertyController {
@@ -39,5 +40,10 @@ public class PropertyController {
     @DeleteMapping("/{id}")
     public void deleteProperty(@PathVariable("id") Long id) {
         propertyService.delete(id);
+    }
+
+    @GetMapping("/customerid/{id}")
+    public List<PropertyDto> getPropertiesByCustomerId(@PathVariable("id") Long id) {
+        return propertyService.getPropertyByCustomerId(id);
     }
 }

@@ -11,7 +11,7 @@ public interface PropertyService {
 
     PropertyDto getPropertyById(Long id);
 
-    PropertyDto getPropertyByCustomerId(Long id);
+    List<PropertyDto> getPropertyByCustomerId(Long id);
 
     List<PropertyDto> getPropertyByAddressId(Long id);
 

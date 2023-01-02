@@ -43,9 +43,14 @@ public class PropertyServiceImpl implements PropertyService {
     }
 
     @Override
-    public PropertyDto getPropertyByCustomerId(Long id) {
-        return modelMapper
-                .map(propertyRepo.findPropertyByCustomerId(id), PropertyDto.class);
+    public List<PropertyDto> getPropertyByCustomerId(Long id) {
+
+        var properties = propertyRepo.findPropertyByCustomerId(id);
+
+        return properties
+                .stream()
+                .map(property -> modelMapper.map(property, PropertyDto.class))
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -60,8 +65,8 @@ public class PropertyServiceImpl implements PropertyService {
     }
 
     @Override
-    public void save(PropertyReqDto PropertyReqDto) {
-        propertyRepo.save(modelMapper.map(PropertyReqDto, Property.class));
+    public void save(PropertyReqDto propertyReqDto) {
+        propertyRepo.save(modelMapper.map(propertyReqDto, Property.class));
     }
 
     @Override

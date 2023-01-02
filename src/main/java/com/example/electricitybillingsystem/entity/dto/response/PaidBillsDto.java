@@ -5,11 +5,10 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@Data
 @NoArgsConstructor
-public class BillDto {
+@Data
+public class PaidBillsDto {
 
-    private Long id;
-    private int reading;
-//    private Date date;
+    private double billReading;
+    private Date date;
 }

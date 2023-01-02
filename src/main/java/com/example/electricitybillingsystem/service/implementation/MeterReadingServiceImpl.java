@@ -56,9 +56,7 @@ public class MeterReadingServiceImpl implements MeterReadingService {
             meterReading.setMeterReading(meterReadingDto.getMeterReading());
         }
 
-        if(meterReadingDto.getDate() != null) {
-            meterReading.setDate(meterReadingDto.getDate());
-        }
+
 
         meterReadingRepo.save(meterReading);
 

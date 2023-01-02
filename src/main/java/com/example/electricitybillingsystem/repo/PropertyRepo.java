@@ -13,7 +13,9 @@ public interface PropertyRepo extends CrudRepository<Property, Long> {
 
      Property findPropertyById(Long id);
 
-     Property findPropertyByCustomerId(Long id);
+//     Property findPropertyByCustomerId(Long id);
+
+     List<Property> findPropertyByCustomerId(Long id);
 
      List<Property> findPropertyByAddressId(Long id);
 

@@ -10,6 +10,7 @@ import java.util.List;
 
 //@CrossOrigin()
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("api/v1/customers")
 public class CustomerController {
